@@ -17,8 +17,8 @@ our @EXPORT_OK = qw(
 
 sub should_quote_hash_key {
     my $str = shift;
-    return 0 if $str =~ /\A[A-Za-z_][A-Za-z0-9_]*\z/;
-    # XXX add more rules
+    return 0 if $str =~ /\A-?[A-Za-z_][A-Za-z0-9_]*\z/;
+    return 0 if $str =~ /\A-?[1-9][0-9]{0,8}\z/;
     1;
 }
 
