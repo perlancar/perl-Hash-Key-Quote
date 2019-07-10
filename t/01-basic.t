@@ -23,6 +23,6 @@ ok( should_quote_hash_key('-012'));
 ok( should_quote_hash_key('12_300'));
 ok( should_quote_hash_key('123.1'));
 ok( should_quote_hash_key('-123.1'));
-ok( should_quote_hash_key('-foo'));
+ok( should_quote_hash_key('--foo'));
 
 done_testing;
