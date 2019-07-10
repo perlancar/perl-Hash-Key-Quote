@@ -66,6 +66,6 @@ quote when necessary, this routine can help you.
 
 L<perlop>
 
-L<Data::Dump> from which this code is extracted from.
+L<Data::Dump> from which this code is extracted.
 
 =cut
