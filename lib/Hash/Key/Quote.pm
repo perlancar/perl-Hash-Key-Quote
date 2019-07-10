@@ -7,18 +7,15 @@ use 5.010001;
 use strict;
 use warnings;
 
-use Scalar::Util qw(looks_like_number);
-
-use Exporter;
-our @ISA = qw(Exporter);
+use Exporter 'import';
 our @EXPORT_OK = qw(
                        should_quote_hash_key
                );
 
 sub should_quote_hash_key {
     my $str = shift;
-    return 0 if $str =~ /\A-?[A-Za-z_][A-Za-z0-9_]*\z/;
-    return 0 if $str =~ /\A-?[1-9][0-9]{0,8}\z/;
+    return 0 if $str =~ /\A-?[A-Za-z_]\w*\z/;
+    return 0 if $str =~ /\A-?[1-9]\d{0,8}\z/;
     1;
 }
 
@@ -68,5 +65,7 @@ quote when necessary, this routine can help you.
 =head1 SEE ALSO
 
 L<perlop>
+
+L<Data::Dump> from which this code is extracted from.
 
 =cut
