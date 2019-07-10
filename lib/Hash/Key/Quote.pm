@@ -16,6 +16,7 @@ sub should_quote_hash_key {
     my $str = shift;
     return 0 if $str =~ /\A-?[A-Za-z_]\w*\z/;
     return 0 if $str =~ /\A-?[1-9]\d{0,8}\z/;
+    # TODO: floating point like 123.1, 1.23456789 or -12345678.9
     1;
 }
 
